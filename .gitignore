@@ -5,5 +5,15 @@ gradle/
 gradlew
 gradlew.bat
 settings.gradle
+build/
+build/
+
+Maddy@DESKTOP-285OGCD MINGW64 /e/IdeaProjects/InvoiceService (main)
+$ nano .gitignore
+  GNU nano 5.6.1                                                                .gitignore                                                                Modified
+settings.gradle
+
+
+
        
 
