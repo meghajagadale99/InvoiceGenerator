@@ -7,9 +7,7 @@ public class InvoiceService {
 
     public double calculateFair(double distance, int time) {
         double totalFair = COST_PER_KM * distance + COST_PER_MINT * time;
-        if(totalFair<MINIMUM_FAIR)
-            return MINIMUM_FAIR;
-        return totalFair;
+        return Math.max(totalFair, MINIMUM_FAIR);
     }
 
     public double calculateFair(Ride[] rides) {
