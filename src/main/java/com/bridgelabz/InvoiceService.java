@@ -10,12 +10,12 @@ public class InvoiceService {
         return Math.max(totalFair, MINIMUM_FAIR);
     }
 
-    public double calculateFair(Ride[] rides) {
+    public InvoiceSummary calculateFair(Ride[] rides) {
         double totalFare = 0;
         for (Ride ride : rides) {
             totalFare += this.calculateFair(ride.distance, ride.time);
         }
-        return totalFare;
+        return new InvoiceSummary(rides.length, totalFare);
     }
 
 }

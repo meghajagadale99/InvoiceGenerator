@@ -31,9 +31,10 @@ public class InvoiceServiceTest {
     @Test
     public void givenMultipleRides_ShouldReturnTotalFare() {
         Ride[] rides = {new Ride(2.0, 5),
-                new Ride(0.1, 1),
+                        new Ride(0.1, 1),
         };
-        double fare = invoiceService.calculateFair(rides);
-        Assertions.assertEquals(30, fare);
+        InvoiceSummary summary = invoiceService.calculateFair(rides);
+        InvoiceSummary expectedInvoiceSummary = new InvoiceSummary(2, 30);
+        Assertions.assertEquals(expectedInvoiceSummary,  summary);
     }
 }
